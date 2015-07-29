@@ -15,5 +15,8 @@ leveraged in your code or can be graphically viewed in Ploty Scatter plot.
     - python /opt/RpiTemp/tools/setup_upstart.py
     - service heat_temp start
     
-#Use
+#Generating a Plotly Graph
+from heat_test import RpiHeat
 
+rpi_heat = RPiHeat()
+url = rpi_heat.plotly_heat_report
