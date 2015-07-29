@@ -20,4 +20,4 @@ from heat_test import RpiHeat
 
 rpi_heat = RPiHeat()
 
-url = rpi_heat.plotly_heat_report
+url = rpi_heat.plotly_heat_report()
