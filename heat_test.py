@@ -13,17 +13,28 @@ class RPiHeat:
     def __init__(self):
         pass
 
-    def plotly_heat_report(self, traces):
+    def plotly_heat_report(self, traces=None):
         tls.set_credentials_file(username=settings.username,
                                  api_key=settings.api_key)
-        data = Data(traces)
-        plot_url = py.plot(data)
+        temps = self.get_temp_data()['heat_data']
+        x = []
+        y = []
+        for temp in temps:
+            y.append(temp[0])
+            x.append(temp[1])
+        trace = [self._build_trace(x, y)]
+        plot_url = self._generate_graph(trace)
         return plot_url
 
     def _build_trace(self, x, y):
         trace = Scatter(x = x,
                         y = y)
         return trace
+
+    def _generate_graph(self, traces):
+        data = Data(traces)
+        plot_url = py.plot(data)
+        return plot_url        
 
     def get_temp_data(self):
         f = open('heat_data.txt', 'r')
