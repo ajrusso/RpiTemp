@@ -19,4 +19,5 @@ leveraged in your code or can be graphically viewed in Ploty Scatter plot.
 from heat_test import RpiHeat
 
 rpi_heat = RPiHeat()
+
 url = rpi_heat.plotly_heat_report
