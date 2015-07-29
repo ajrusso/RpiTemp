@@ -16,7 +16,7 @@ leveraged in your code or can be graphically viewed in Ploty Scatter plot.
     - service heat_temp start
     
 #Generating a Plotly Graph
-from heat_test import RpiHeat
+from heat_test import RPiHeat
 
 rpi_heat = RPiHeat()
 
